@@ -16,12 +16,12 @@
     </thead>
     <tbody>
     {% for order in order_list %}
-    <tr>
-        <td>{{ forloop.counter }}</td>
-        <td>{{ order }}</td>
-        <td><a href="">Modify</a></td>
-        <td><a href="">Delete</a></td>
-    </tr>
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ order }}</td>
+            <td><a href="{% url 'order:update' pk=order.id %}">Modify</a></td>
+            <td><a href="{% url 'order:delete' pk=order.id %}">Delete</a></td>
+        </tr>
     {% endfor %}
     </tbody>
 </table>
